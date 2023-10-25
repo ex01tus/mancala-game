@@ -1,0 +1,6 @@
+{
+  "message": "Invalid request",
+  "errors": [
+    "connect.gameId: must be a valid UUID"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "4d7da867-ce6d-4eab-8de8-79a2e38f717b",
+  "board": {
+    "pits": [
+      [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        0
+      ],
+      [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        0
+      ]
+    ]
+  },
+  "players": {
+    "active": 0
+  },
+  "status": "CREATED",
+  "result": {
+    "winner": -1
+  }
+}

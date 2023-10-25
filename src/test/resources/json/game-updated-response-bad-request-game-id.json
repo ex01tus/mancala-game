@@ -1,0 +1,6 @@
+{
+  "message": "Invalid request",
+  "errors": [
+    "makeTurn.gameId: must be a valid UUID"
+  ]
+}

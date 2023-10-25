@@ -1,0 +1,6 @@
+{
+  "message": "Invalid request",
+  "errors": [
+    "disconnect.playerId: must be less than or equal to 1"
+  ]
+}

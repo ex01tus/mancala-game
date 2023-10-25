@@ -1,0 +1,7 @@
+{
+  "message": "Invalid request",
+  "errors": [
+    "col: must be less than or equal to 5",
+    "row: must be less than or equal to 1"
+  ]
+}
