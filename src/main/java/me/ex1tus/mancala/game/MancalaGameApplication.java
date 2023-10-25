@@ -9,5 +9,4 @@ public class MancalaGameApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MancalaGameApplication.class, args);
 	}
-
 }
