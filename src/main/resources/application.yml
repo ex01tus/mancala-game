@@ -1,3 +1,11 @@
+logging:
+  level:
+    me.ex1tus.mancala.game.rule: DEBUG
+
 game:
   pits-in-row: 6
   stones-in-pit: 6
+
+features:
+  redis:
+    enabled: false
