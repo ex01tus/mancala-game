@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import me.ex1tus.mancala.game.model.Game;
 import me.ex1tus.mancala.game.model.Pit;
 import me.ex1tus.mancala.game.service.GameService;
+import me.ex1tus.mancala.game.service.messaging.MessagingService;
 import org.hibernate.validator.constraints.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 public class GameController {
 
     private final GameService gameService;
+    private final MessagingService<Game> messagingService;
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
@@ -28,20 +30,23 @@ public class GameController {
 
     @PostMapping("/{gameId}/players")
     public Game connect(@PathVariable @UUID String gameId) {
-        return gameService.connect(gameId);
+        return messagingService.publish(
+                gameService.connect(gameId));
     }
 
     @DeleteMapping("/{gameId}/players/{playerId}")
     public Game disconnect(
             @PathVariable @UUID String gameId,
             @PathVariable @Min(0) @Max(1) int playerId) {
-        return gameService.disconnect(gameId, playerId);
+        return messagingService.publish(
+                gameService.disconnect(gameId, playerId));
     }
 
     @PostMapping("/{gameId}/turns")
     public Game makeTurn(
             @PathVariable @UUID String gameId,
             @RequestBody @Valid Pit pit) {
-        return gameService.makeTurn(gameId, pit);
+        return messagingService.publish(
+                gameService.makeTurn(gameId, pit));
     }
 }
