@@ -12,3 +12,5 @@ features:
   stomp:
     topic: /topic/games/
     enabled: true
+  http-logging:
+    enabled: true
