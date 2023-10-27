@@ -1,5 +1,6 @@
 package me.ex1tus.mancala.game.rest;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import me.ex1tus.mancala.game.exception.GameNotFoundException;
@@ -20,6 +21,9 @@ public class GlobalExceptionHandler {
     private static final String INVALID_REQUEST_MESSAGE = "Invalid request";
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ApiResponse(
+            responseCode = "404",
+            description = "Game with the specified id either doesn’t exist or unavailable")
     @ExceptionHandler(GameNotFoundException.class)
     public void gameNotFound() {
     }

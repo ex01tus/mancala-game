@@ -1,3 +1,9 @@
+springdoc:
+  api-docs:
+    path: /admin/api-docs
+  swagger-ui:
+    path: /admin/swagger-ui
+
 logging:
   level:
     me.ex1tus.mancala.game.rule: DEBUG
