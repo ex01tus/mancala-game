@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mancala Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+
+<body>
+<div id="main-content" class="container">
+    <div class="row">
+        <label id="info">Create a new game or connect to an existing one using game ID.</label>
+    </div>
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group">
+                <button id="create" class="btn btn-default" type="submit">Create</button>
+                <label for="game">Game ID:</label>
+                <input type="text" id="game" class="form-control" size="36" placeholder="Your game here...">
+                <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div class="row">
+        <table class="board">
+            <thead>
+            <tr>
+                <th>Board</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td rowspan="2">
+                    <button id="mancala-1" class="btn btn-default" type="submit" disabled="disabled">0</button>
+                </td>
+                <td>
+                    <button id="pit-15" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-14" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-13" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-12" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-11" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-10" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                </td>
+                <td rowspan="2">
+                    <button id="mancala-0" class="btn btn-default" type="submit" disabled="disabled">0</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="pit-00" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-01" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-02" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-03" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-04" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                    <button id="pit-05" class="btn btn-default" type="submit" disabled="disabled">6</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="row">
+        <table hidden id="history" class="table table-striped">
+            <thead>
+                <th>Game History</th>
+                <th>Active Player</th>
+                <th>Pits State</th>
+            </thead>
+            <tbody id="history-entries">
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>
