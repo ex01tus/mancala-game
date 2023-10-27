@@ -1,0 +1,9 @@
+services:
+  redis:
+    image: "redis"
+  web:
+    build: .
+    links:
+      - redis
+    ports:
+      - "8080:8080"

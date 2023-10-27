@@ -20,7 +20,7 @@ game:
 
 features:
   redis:
-    enabled: false
+    enabled: true
   stomp:
     topic: /topic/games/
     enabled: true
