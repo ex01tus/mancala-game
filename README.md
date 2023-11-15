@@ -13,6 +13,8 @@
 5. Paste game ID in an input field and click _Connect_.
 6. The game has started. Use board buttons to make turns. Switch browser tabs to switch between players.
 
+_Check [How to Play Mancala](https://www.youtube.com/watch?v=OX7rj93m6o8) YouTube video for reference._
+
 ## Reasoning Behind Technical Decisions
 
 1. Domain objects are immutable—thus they’re thread safe and easy to reason about.
